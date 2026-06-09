@@ -1,0 +1,46 @@
+class Account {
+    // 1. Private variables (Data Hiding)
+    private String holderName;
+    private double balance;
+
+    // 2. Public Getter for Name
+    public String getHolderName() {
+        return holderName;
+    }
+
+    // Public Setter for Name
+    public void setHolderName(String holderName) {
+        this.holderName = holderName;
+    }
+
+    // Public Getter for Balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // Public Setter for Balance with Validation
+    public void setBalance(double balance) {
+        if (balance >= 0) { // Safeguard rule
+            this.balance = balance;
+        } else {
+            System.out.println("Error: Balance cannot be negative!");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Account acc = new Account();
+
+        // Direct access like 'acc.balance = -500' will cause a compile error.
+        
+        // Setting data safely through setters
+        acc.setHolderName("Srinivaas");
+        acc.setBalance(
+            65000.0);
+
+        // Reading data safely through getters
+        System.out.println("Account Holder: " + acc.getHolderName());
+        System.out.println("Current Balance: ₹" + acc.getBalance());
+    }
+}

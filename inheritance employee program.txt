@@ -1,0 +1,29 @@
+// Parent Class
+class Employee {
+    String name = "Srinivaas";
+    double salary = 40000;
+}
+
+// Child Class
+class FullTimeEmployee extends Employee {
+    double bonus = 5000;
+
+    void showSalary() {
+        double total = salary + bonus;
+        System.out.println("Employee Name: " + name);
+        System.out.println("Base Salary: " + salary);
+        System.out.println("Bonus: " + bonus);
+        System.out.println("Total Salary: " + total);
+    }
+}
+
+// Main Class
+public class Main {
+    public static void main(String[] args) {
+        // Create child class object
+        FullTimeEmployee emp = new FullTimeEmployee();
+        
+        // Call method to show output
+        emp.showSalary();
+    }
+}
